@@ -1,0 +1,29 @@
+$("#form_id_come here").submit(function(e){ // providing id is alway good choice
+
+// submit button donot refresh page because of line below
+e.preventDefault();
+
+var formdata = new FormData(this);
+
+$.ajax({
+type: "POST",
+url: "Your url come here",
+data: formData,
+
+// bro dont forget this 
+// this is imp for processing image in jquery
+processData: false,
+contentType: false,
+
+// remove datatype use it by default value
+success: function(data, textStatus, jqXHR) {
+//process data
+// your alert or callback function come here
+}
+});
+
+and same php code like 
+
+if(isset($_POST['any filed name that unique'])){
+// your futher process code
+}
